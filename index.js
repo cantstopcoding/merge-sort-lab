@@ -13,3 +13,15 @@ function merge(subArr1, subArr2) {
   }
   return sorted.concat(subArr1).concat(subArr2);
 }
+
+function mergeSort(arr) {
+  let midpoint = arr.length / 2;
+  let firstHalf = arr.slice(0, midpoint);
+  let secondHalf = arr.slice(midpoint, arr.length);
+
+  if (arr.length < 2) {
+    return arr;
+  } else {
+    return merge(mergeSort(firstHalf), mergeSort(secondHalf));
+  }
+}
