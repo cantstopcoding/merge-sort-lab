@@ -14,13 +14,13 @@ function merge(subArr1, subArr2) {
   return sorted.concat(subArr1).concat(subArr2);
 }
 
-function mergeSort(arr) {
-  let midpoint = arr.length / 2;
-  let firstHalf = arr.slice(0, midpoint);
-  let secondHalf = arr.slice(midpoint, arr.length);
+function mergeSort(array) {
+  let midpoint = array.length / 2;
+  let firstHalf = array.slice(0, midpoint);
+  let secondHalf = array.slice(midpoint, array.length);
 
-  if (arr.length < 2) {
-    return arr;
+  if (array.length < 2) {
+    return array;
   } else {
     return merge(mergeSort(firstHalf), mergeSort(secondHalf));
   }
